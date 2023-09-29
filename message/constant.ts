@@ -26,5 +26,13 @@ export const BYTE_POSITION = {
     CONTENT: 8,
 }
 
-
+export const FAIL_REASON = {
+    NO_FACE_DETECTED: '01',
+    ANGLE_TOO_LARGE: '03',
+    LIVING_2D: '06',
+    LIVING_3D: '07',
+    MATCH_FAILED: '08',
+    DUPLICATE_REGISTRATION: '09',
+    CANNOT_SAVE_ID: '0a',
+}
 export type MessageType = MESSAGE_TYPE[keyof MESSAGE_TYPE];

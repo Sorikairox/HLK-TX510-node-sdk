@@ -9,7 +9,7 @@ describe.each([
     { buffer: 'EFAA000000000212061A', expected: { type: '12', size: 2, content: '06'} },
   ])('Message from buffer', ({buffer, expected}) => {
 
-    const message = Message.fromBuffer(Buffer.from(new String(buffer), 'hex'));
+    const message = Message.fromBuffer(Buffer.from(String(buffer), 'hex'));
 
     it('set type', () => {
         expect(message.type).toEqual(expected.type);
