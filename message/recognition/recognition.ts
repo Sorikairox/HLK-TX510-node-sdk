@@ -1,4 +1,4 @@
-import { Message } from "./class";
+import { Message } from "../message";
 
 
 export class Recognition extends Message {
@@ -11,11 +11,8 @@ export class Recognition extends Message {
         return Recognition.fromMessage(message);
     }
 
-    static fromMessage(message: Message) {
+    private static fromMessage(message: Message) {
         const recognitionMessage: Recognition = { reason: null, success: false, userId: null, ...message};
-        recognitionMessage.size = message.size;
-        recognitionMessage.type = message.type;
-        recognitionMessage.content = message.content;
 
         recognitionMessage.success = recognitionMessage.content.slice(0, 2) === '00';
         if (recognitionMessage.success) {

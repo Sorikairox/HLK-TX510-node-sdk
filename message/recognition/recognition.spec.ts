@@ -1,11 +1,13 @@
 import { it, describe, expect } from 'vitest';
 import {Recognition} from "./recognition";
+import { FAIL_REASON } from '../constant';
 
 
 describe.each([
-    { name: 'Fail because 2D', buffer: 'EFAA000000000212061A', expected: { success: false, userId: null, reason: '06'} },
+    { name: 'Fail because 2D', buffer: 'EFAA000000000212061A', expected: { success: false, userId: null, reason: FAIL_REASON.LIVING_2D} },
+    { name: 'Fail because 3D', buffer: 'EFAA000000000212071A', expected: { success: false, userId: null, reason: FAIL_REASON.LIVING_3D} },
     { name: 'Success', buffer: 'EFAA00000000041200000016', expected: { success: true, userId: 0, reason: null } },
-  ])('Recognition from $name', ({buffer, expected}) => {
+  ])('$name', ({buffer, expected}) => {
 
     const message = Recognition.fromBuffer(Buffer.from(String(buffer), 'hex'));
 
