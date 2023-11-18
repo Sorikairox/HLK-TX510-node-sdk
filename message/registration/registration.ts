@@ -1,25 +1,29 @@
 import { Message } from "../message";
 
 
-export class Registration extends Message {
+export class RegistrationMessage extends Message {
     success: boolean = false;
     userId: number | null = null;
     reason: string | null = null;
 
     static fromBuffer(buffer: Buffer) {
         const message: Message = Message.fromBuffer(buffer);
-        return Registration.fromMessage(message);
+        return RegistrationMessage.fromMessage(message);
     }
 
     private static fromMessage(message: Message) {
-        const RegistrationMessage: Registration = { reason: null, success: false, userId: null, ...message};
+        const registrationMessage: RegistrationMessage = new RegistrationMessage(message);
 
-        RegistrationMessage.success = RegistrationMessage.content.slice(0, 2) === '00';
-        if (RegistrationMessage.success) {
-            RegistrationMessage.userId = Number(RegistrationMessage.content.slice(2));
+        registrationMessage.success = registrationMessage.content.slice(0, 2) === '00';
+        if (registrationMessage.success) {
+            registrationMessage.userId = Number(registrationMessage.content.slice(2));
         } else {
-            RegistrationMessage.reason = RegistrationMessage.content.slice(0, 2);
+            registrationMessage.reason = registrationMessage.content.slice(0, 2);
         }
-        return RegistrationMessage;
+        return registrationMessage;
+    }
+
+    constructor(message: Message) {
+        super(message);
     }
 }

@@ -1,4 +1,4 @@
-export type MESSAGE_TYPE = {
+export const MESSAGE_TYPE = {
     RECOGNITION: '12',
     REGISTRATION: '13',
     DELETE_USER: '20',
@@ -35,4 +35,4 @@ export const FAIL_REASON = {
     DUPLICATE_REGISTRATION: '09',
     CANNOT_SAVE_ID: '0a',
 }
-export type MessageType = MESSAGE_TYPE[keyof MESSAGE_TYPE];
+export type MessageType = typeof MESSAGE_TYPE;

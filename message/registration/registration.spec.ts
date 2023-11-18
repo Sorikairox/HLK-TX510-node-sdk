@@ -1,5 +1,5 @@
 import { it, describe, expect } from 'vitest';
-import {Registration} from "./registration";
+import { RegistrationMessage } from "./registration";
 import { FAIL_REASON } from '../constant';
 
 describe.each([
@@ -8,7 +8,7 @@ describe.each([
     { name: 'Success', buffer: 'EFAA00000000041300000017', expected: { success: true, userId: 0, reason: null } },
   ])('$name', ({buffer, expected}) => {
 
-    const message = Registration.fromBuffer(Buffer.from(String(buffer), 'hex'));
+    const message = RegistrationMessage.fromBuffer(Buffer.from(String(buffer), 'hex'));
 
     it('set success', () => {
         expect(message.success).toEqual(expected.success);
