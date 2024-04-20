@@ -1,14 +1,14 @@
 export const MESSAGE_TYPE = {
     RECOGNITION: '12',
     REGISTRATION: '13',
-    DELETE_USER: '20',
+    USER_DELETION: '20',
     DELETE_ALL: '21',
-    BACKLIGHT: 'C0',
-    DISPLAY: 'C1',
-    WHITE_LIGHT: 'C2',
+    BACKLIGHT: 'c0',
+    DISPLAY: 'c1',
+    WHITE_LIGHT: 'c2',
     VERSION: '30',
-    RESTART: 'C3',
-    USER_NUMBER: 'C4'
+    RESTART: 'c3',
+    USER_NUMBER: 'c4'
 }
 
 export const BYTE_SIZE = {

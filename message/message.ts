@@ -1,10 +1,15 @@
 import { BYTE_POSITION, BYTE_SIZE, MessageType } from "./constant";
 
 export class Message {
+    // @ts-ignore
     type: keyof MessageType;
-    content: string;
-    size: number;
+    // @ts-ignore
+    content: string
+    // @ts-ignore
+    size: number
+    // @ts-ignore
     rawHexData: string;
+    // @ts-ignore
     parityCheck: string;
 
    static fromBuffer(buffer: Buffer) {

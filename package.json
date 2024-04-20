@@ -3,7 +3,11 @@
     "@serialport/parser-inter-byte-timeout": "^12.0.0",
     "@types/node": "^20.7.1",
     "serialport": "^12.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
     "vitest": "^0.34.5"
+  },
+  "scripts": {
+    "start": "ts-node main.ts"
   }
 }
