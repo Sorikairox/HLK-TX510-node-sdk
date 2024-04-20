@@ -68,20 +68,3 @@ class HLKTX510SDK extends EventEmitter {
 		});
 	}
 }
-
-const sdk = new HLKTX510SDK('/dev/tty.usbserial-130');
-sdk.on('recognition', (message: RecognitionMessage) => {
-	console.log('Recognition:', message);
-});
-
-sdk.on('registration', (message: RegistrationMessage) => {
-	console.log('Registration:', message);
-});
-
-sdk.on('user-list', (message: UserListMessage) => {
-	console.log('User list:', message);
-});
-
-sdk.on('unknown-message', (message) => {
-	console.log('Unknown message:', message);
-});
