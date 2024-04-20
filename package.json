@@ -1,6 +1,6 @@
 {
   "name": "hlk-tx510-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "@serialport/parser-inter-byte-timeout": "^12.0.0",
     "@types/node": "^20.7.1",
