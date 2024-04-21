@@ -1,15 +1,19 @@
 {
   "name": "hlk-tx510-sdk",
   "version": "1.0.1",
-  "dependencies": {
-    "@serialport/parser-inter-byte-timeout": "^12.0.0",
+  "devDependencies": {
     "@types/node": "^20.7.1",
-    "serialport": "^12.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
     "vitest": "^0.34.5"
   },
+  "dependencies": {
+    "@serialport/parser-inter-byte-timeout": "^12.0.0",
+    "serialport": "^12.0.0"
+  },
   "scripts": {
-    "start": "ts-node main.ts"
-  }
+    "start": "ts-node index.ts",
+    "build": "tsc"
+  },
+  "main": "index.js"
 }
