@@ -7,7 +7,7 @@ import { RegistrationMessage } from './message/registration/registration';
 import { UserDeletionMessage } from './message/user-deletion';
 import { UserListMessage } from './message/user-list/user-list';
 
-class HLKTX510SDK extends EventEmitter {
+export class HLKTX510SDK extends EventEmitter {
 
 	private newPort: SerialPort;
 	constructor(portPath: string) {
