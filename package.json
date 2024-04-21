@@ -1,6 +1,6 @@
 {
   "name": "hlk-tx510-sdk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "devDependencies": {
     "@types/node": "^20.7.1",
     "ts-node": "^10.9.2",
